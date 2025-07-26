@@ -62,7 +62,7 @@ public class ProductController {
                     if(!result.isSuccess()) {
                         return new ResponseEntity<>(result.getErrorMessages(), HttpStatus.BAD_REQUEST);
                     }
-                    return new ResponseEntity<>(result.getProductResponse(), HttpStatus.CREATED);
+                    return new ResponseEntity<>(result.getData(), HttpStatus.CREATED);
                 });
     }
 
@@ -79,7 +79,7 @@ public class ProductController {
                     if(!result.isSuccess()) {
                         return new ResponseEntity<>(result.getErrorMessages(), HttpStatus.BAD_REQUEST);
                     }
-                    return ResponseEntity.ok(result.getProductResponse());
+                    return ResponseEntity.ok(result.getData());
                 });
     }
 
@@ -110,7 +110,7 @@ public class ProductController {
                     if(!result.isSuccess()) {
                         return new ResponseEntity<>(result.getErrorMessages(), HttpStatus.BAD_REQUEST);
                     }
-                    return new ResponseEntity<>(result.getProductResponse(), HttpStatus.CREATED);
+                    return new ResponseEntity<>(result.getData(), HttpStatus.CREATED);
                 });
     }
 
@@ -127,7 +127,7 @@ public class ProductController {
                     if(!result.isSuccess()) {
                         return new ResponseEntity<>(result.getErrorMessages(), HttpStatus.BAD_REQUEST);
                     }
-                    return new ResponseEntity<>(result.getProductResponse(), HttpStatus.OK);
+                    return new ResponseEntity<>(result.getData(), HttpStatus.OK);
                 });
     }
 

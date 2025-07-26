@@ -85,12 +85,13 @@ class ProductServiceTest {
         ProductRequestDTO productRequestDTO = generateProductRequest();
         productRequestDTO.setVariations(List.of(variationRequestDTO));
 
-        CompletableFuture<ProductResult> result = service.createProduct(productRequestDTO);
+        CompletableFuture<Result> result = service.createProduct(productRequestDTO);
 
         assertTrue(result.isDone());
         assertNotNull(result.get());
         assertTrue(result.get().isSuccess());
-        assertEquals(productRequestDTO.getName(), result.get().getProductResponse().getName());
+
+        assertEquals(productRequestDTO.getName(), ((ProductResponseDTO) result.get().getData()).getName());
     }
 
     @Test
@@ -198,12 +199,12 @@ class ProductServiceTest {
 
         ProductRequestDTO productRequestDTO = generateProductRequest();
 
-        CompletableFuture<ProductResult> result = service.updateProduct(1L, productRequestDTO);
+        CompletableFuture<Result> result = service.updateProduct(1L, productRequestDTO);
 
         assertTrue(result.isDone());
         assertNotNull(result.get());
         assertTrue(result.get().isSuccess());
-        assertEquals(productRequestDTO.getName(), result.get().getProductResponse().getName());
+        assertEquals(productRequestDTO.getName(), ((ProductResponseDTO) result.get().getData()).getName());
     }
 
     @Test
@@ -322,12 +323,12 @@ class ProductServiceTest {
 
         when(productRepository.findById(any(Long.class))).thenReturn(Optional.of(generateProduct(1L)));
 
-        CompletableFuture<ProductResult> result = service.createVariation(1L, variationRequestDTO);
+        CompletableFuture<Result> result = service.createVariation(1L, variationRequestDTO);
 
         assertTrue(result.isDone());
         assertNotNull(result.get());
         assertTrue(result.get().isSuccess());
-        assertEquals(variationRequestDTO.getSku(), result.get().getProductResponse().getVariations().get(0).getSku());
+        assertEquals(variationRequestDTO.getSku(), ((ProductResponseDTO) result.get().getData()).getVariations().get(0).getSku());
     }
 
     @Test
@@ -439,12 +440,12 @@ class ProductServiceTest {
 
         when(productVariationRepository.findById(any(Long.class))).thenReturn(Optional.of(existingVariation));
 
-        CompletableFuture<ProductResult> result = service.updateVariation(1L, variationRequestDTO);
+        CompletableFuture<Result> result = service.updateVariation(1L, variationRequestDTO);
 
         assertTrue(result.isDone());
         assertNotNull(result.get());
         assertTrue(result.get().isSuccess());
-        assertEquals(variationRequestDTO.getSku(), result.get().getProductResponse().getVariations().get(0).getSku());
+        assertEquals(variationRequestDTO.getSku(), ((ProductResponseDTO) result.get().getData()).getVariations().get(0).getSku());
     }
 
     @Test

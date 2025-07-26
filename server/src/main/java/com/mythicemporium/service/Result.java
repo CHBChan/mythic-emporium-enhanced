@@ -1,18 +1,17 @@
 package com.mythicemporium.service;
 
-import com.mythicemporium.dto.ProductResponseDTO;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductResult {
+public class Result<T> {
     private final ArrayList<String> messages = new ArrayList<>();
 
     @Setter
     @Getter
-    private ProductResponseDTO productResponse;
+    private T data;
 
     @Getter
     private ResultType resultType = ResultType.SUCCESS;

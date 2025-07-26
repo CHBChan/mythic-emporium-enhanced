@@ -53,7 +53,7 @@ public class ProductService {
         return product.map(this::toResponseDTO).orElse(null);
     }
 
-    public CompletableFuture<ProductResult> createProduct(ProductRequestDTO productRequest) {
+    public CompletableFuture<Result> createProduct(ProductRequestDTO productRequest) {
         validateProductRequestDTO((long) 0, productRequest);
 
         Brand brand = brandRepository.findById(productRequest.getBrandId())
@@ -96,11 +96,11 @@ public class ProductService {
             throw new InvalidRequestException("Product variation cannot be null.");
         }
 
-        ProductResult result = new ProductResult();
+        Result result = new Result();
 
         try {
             product = productRepository.save(product);
-            result.setProductResponse(toResponseDTO(product));
+            result.setData(toResponseDTO(product));
         }
         catch(Exception ex) {
             result.addErrorMessage(ex.getMessage(), ResultType.INVALID);
@@ -109,7 +109,7 @@ public class ProductService {
         return CompletableFuture.completedFuture(result);
     }
 
-    public CompletableFuture<ProductResult> updateProduct(Long productId, ProductRequestDTO productRequest) {
+    public CompletableFuture<Result> updateProduct(Long productId, ProductRequestDTO productRequest) {
         validateProductRequestDTO(productId, productRequest);
 
         if(productRequest.getVariations() != null) {
@@ -127,9 +127,9 @@ public class ProductService {
         product.setBrand(brand);
         product.setCategory(category);
 
-        ProductResult result = new ProductResult();
+        Result result = new Result();
         Product savedProduct = productRepository.save(product);
-        result.setProductResponse(toResponseDTO(savedProduct));
+        result.setData(toResponseDTO(savedProduct));
         return CompletableFuture.completedFuture(result);
     }
 
@@ -144,7 +144,7 @@ public class ProductService {
         return true;
     }
 
-    public CompletableFuture<ProductResult> createVariation(Long productId, ProductVariationRequestDTO productVariationDTO) {
+    public CompletableFuture<Result> createVariation(Long productId, ProductVariationRequestDTO productVariationDTO) {
         validateProductVariationRequestDTO(productId, productVariationDTO);
 
         Product product = productRepository.findById(productId)
@@ -175,13 +175,13 @@ public class ProductService {
         productVariationRepository.save(variation);
         product.getVariations().add(variation);
 
-        ProductResult result = new ProductResult();
-        result.setProductResponse(toResponseDTO(product));
+        Result result = new Result();
+        result.setData(toResponseDTO(product));
 
         return CompletableFuture.completedFuture(result);
     }
 
-    public CompletableFuture<ProductResult> updateVariation(Long variationId, ProductVariationRequestDTO productVariationDTO) {
+    public CompletableFuture<Result> updateVariation(Long variationId, ProductVariationRequestDTO productVariationDTO) {
         if(variationId < 0) {
             throw new InvalidRequestException("Variation id cannot be negative.");
         }
@@ -219,8 +219,8 @@ public class ProductService {
 
         productVariationRepository.save(variation);
 
-        ProductResult result = new ProductResult();
-        result.setProductResponse(toResponseDTO(product));
+        Result result = new Result();
+        result.setData(toResponseDTO(product));
 
         return CompletableFuture.completedFuture(result);
     }

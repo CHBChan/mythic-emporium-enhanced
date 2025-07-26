@@ -5,9 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96215bcf-52d6-4c07-99d3-b7081bd48ab0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/controller/BrandController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/controller/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/dto/BrandRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/dto/CategoryRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/BrandService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/controller/BrandControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/controller/CategoryControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/repository/BrandRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/repository/CategoryRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/service/BrandServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/service/CategoryServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/BrandRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/BrandRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/security/ProductPermissionEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/security/ProductPermissionEvaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/ProductResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mythicemporium/controller/ProductControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/controller/ProductControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mythicemporium/service/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/service/ProductServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,71 +54,86 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in server.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.CreateInvalidProductShouldReturn403.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.createProductAsUserShouldReturn401.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.createProductAsUserShouldReturn403.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.createValidProductShouldReturn200.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.createValidProductShouldReturn201.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.deleteValidProductShouldReturn204.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.deleteValidProductShouldReturn400.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.updateInvalidProductShouldReturn403.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductControllerTest.updateValidProductShouldReturn200.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductRepositoryTest.shouldDeleteByIdAndReturnCount.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductRepositoryTest.shouldReturnAllByBrand.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductRepositoryTest.shouldSave.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.findAllByBrandId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.findAllByCategoryId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldCreateValidProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldCreateValidVariation.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldDeleteValidProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldFindAll.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotCreateProductWithInvalidBrand.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotCreateProductWithInvalidCategory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotCreateProductWithInvalidDTO.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotCreateProductWithInvalidDescription.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotCreateProductWithInvalidName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotCreateProductWithNonExistentBrand.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotCreateProductWithNonExistentCategory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotCreateVariationWIthInvalidDTO.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotCreateVariationWithInvalidId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotDeleteNonExistentProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotDeleteProductWithInvalidId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotUpdateProductWithInvalidBrand.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotUpdateProductWithInvalidCategory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotUpdateProductWithInvalidId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotUpdateProductWithNonExistentBrand.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldNotUpdateProductWithNonExistentCategory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldUpdateValidProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.shouldUpdateValidVariation.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductVariationRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductVariationRepositoryTest.shouldDecrementStock.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductVariationRepositoryTest.shouldDeleteByIdAndReturnCount.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductVariationRepositoryTest.shouldSave.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductVariationRepositoryTest.shouldUpdatePriceById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductVariationRepositoryTest.shouldUpdateStockById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in server.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Benny/Desktop/Coding/repos/mythic-emporium-enhanced/server/src/main/java/com/mythicemporium/security&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "JUnit.All in server.executor": "Run",
+    "JUnit.BrandControllerTest (1).executor": "Run",
+    "JUnit.BrandControllerTest.executor": "Run",
+    "JUnit.BrandRepositoryTest.executor": "Run",
+    "JUnit.BrandServiceTest.executor": "Run",
+    "JUnit.BrandServiceTest.shouldCreateValidBrand.executor": "Run",
+    "JUnit.BrandServiceTest.shouldNotCreateBrandWithDuplicateName.executor": "Run",
+    "JUnit.BrandServiceTest.shouldNotCreateBrandWithInvalidDTO.executor": "Run",
+    "JUnit.BrandServiceTest.shouldNotCreateBrandWithInvalidName.executor": "Run",
+    "JUnit.BrandServiceTest.shouldNotUpdateBrandWithDuplicateName.executor": "Run",
+    "JUnit.BrandServiceTest.shouldNotUpdateBrandWithInvalidName.executor": "Run",
+    "JUnit.BrandServiceTest.shouldUpdateValidBrand.executor": "Run",
+    "JUnit.CategoryControllerTest.executor": "Run",
+    "JUnit.CategoryRepositoryTest.executor": "Run",
+    "JUnit.CategoryServiceTest.executor": "Run",
+    "JUnit.ProductControllerTest.CreateInvalidProductShouldReturn403.executor": "Run",
+    "JUnit.ProductControllerTest.createProductAsUserShouldReturn401.executor": "Run",
+    "JUnit.ProductControllerTest.createProductAsUserShouldReturn403.executor": "Run",
+    "JUnit.ProductControllerTest.createValidProductShouldReturn200.executor": "Run",
+    "JUnit.ProductControllerTest.createValidProductShouldReturn201.executor": "Run",
+    "JUnit.ProductControllerTest.deleteValidProductShouldReturn204.executor": "Run",
+    "JUnit.ProductControllerTest.deleteValidProductShouldReturn400.executor": "Run",
+    "JUnit.ProductControllerTest.executor": "Run",
+    "JUnit.ProductControllerTest.updateInvalidProductShouldReturn403.executor": "Run",
+    "JUnit.ProductControllerTest.updateValidProductShouldReturn200.executor": "Run",
+    "JUnit.ProductRepositoryTest.executor": "Run",
+    "JUnit.ProductRepositoryTest.shouldDeleteByIdAndReturnCount.executor": "Run",
+    "JUnit.ProductRepositoryTest.shouldReturnAllByBrand.executor": "Run",
+    "JUnit.ProductRepositoryTest.shouldSave.executor": "Run",
+    "JUnit.ProductServiceTest.executor": "Run",
+    "JUnit.ProductServiceTest.findAllByBrandId.executor": "Run",
+    "JUnit.ProductServiceTest.findAllByCategoryId.executor": "Run",
+    "JUnit.ProductServiceTest.shouldCreateValidProduct.executor": "Run",
+    "JUnit.ProductServiceTest.shouldCreateValidVariation.executor": "Run",
+    "JUnit.ProductServiceTest.shouldDeleteValidProduct.executor": "Run",
+    "JUnit.ProductServiceTest.shouldFindAll.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotCreateProductWithInvalidBrand.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotCreateProductWithInvalidCategory.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotCreateProductWithInvalidDTO.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotCreateProductWithInvalidDescription.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotCreateProductWithInvalidName.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotCreateProductWithNonExistentBrand.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotCreateProductWithNonExistentCategory.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotCreateVariationWIthInvalidDTO.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotCreateVariationWithInvalidId.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotDeleteNonExistentProduct.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotDeleteProductWithInvalidId.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotUpdateProductWithInvalidBrand.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotUpdateProductWithInvalidCategory.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotUpdateProductWithInvalidId.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotUpdateProductWithNonExistentBrand.executor": "Run",
+    "JUnit.ProductServiceTest.shouldNotUpdateProductWithNonExistentCategory.executor": "Run",
+    "JUnit.ProductServiceTest.shouldUpdateValidProduct.executor": "Run",
+    "JUnit.ProductServiceTest.shouldUpdateValidVariation.executor": "Run",
+    "JUnit.ProductVariationRepositoryTest.executor": "Run",
+    "JUnit.ProductVariationRepositoryTest.shouldDecrementStock.executor": "Run",
+    "JUnit.ProductVariationRepositoryTest.shouldDeleteByIdAndReturnCount.executor": "Run",
+    "JUnit.ProductVariationRepositoryTest.shouldSave.executor": "Run",
+    "JUnit.ProductVariationRepositoryTest.shouldUpdatePriceById.executor": "Run",
+    "JUnit.ProductVariationRepositoryTest.shouldUpdateStockById.executor": "Run",
+    "JUnit.java in server.executor": "Run",
+    "JUnit.repository in server.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Benny/Desktop/Coding/repos/ga_mobile",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Benny\Desktop\Coding\repos\mythic-emporium-enhanced\server\src\main\java\com\mythicemporium\security" />
@@ -117,31 +152,14 @@
       <recent name="com.mythicemporium.repository" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mythicemporium.service" />
+      <recent name="com.mythicemporium.repository" />
+      <recent name="com.mythicemporium.dto" />
       <recent name="com.mythicemporium.config" />
       <recent name="com.mythicemporium.exception" />
-      <recent name="com.mythicemporium.dto" />
-      <recent name="com.mythicemporium.service" />
-      <recent name="com.mythicemporium.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in server">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
-        <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.mythicemporium.App" />
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mythicemporium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.service in server">
     <configuration default="true" type="Application" factoryName="Application">
       <envs>
         <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
@@ -152,7 +170,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BrandControllerTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
@@ -161,7 +179,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.mythicemporium.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.mythicemporium.controller.ProductControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="com.mythicemporium.controller.BrandControllerTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <envs>
@@ -172,18 +190,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductControllerTest.createProductAsUserShouldReturn403" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BrandControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mythicemporium.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.mythicemporium.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.mythicemporium.controller.ProductControllerTest" />
-      <option name="METHOD_NAME" value="createProductAsUserShouldReturn403" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BrandControllerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
       <envs>
         <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
         <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
@@ -192,16 +204,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductVariationRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mythicemporium.repository.*" />
+          <option name="PATTERN" value="com.mythicemporium.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.mythicemporium.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.mythicemporium.repository.ProductVariationRepositoryTest" />
+      <option name="PACKAGE_NAME" value="com.mythicemporium.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.mythicemporium.controller.CategoryControllerTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <envs>
@@ -225,7 +237,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="controller in server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -234,18 +246,32 @@
         <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
         <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
       </envs>
-      <dir value="$PROJECT_DIR$/src/test/java" />
+      <dir value="$PROJECT_DIR$/src/test/java/com/mythicemporium/controller" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="service in server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="directory" />
+      <envs>
+        <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
+        <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
+      </envs>
+      <dir value="$PROJECT_DIR$/src/test/java/com/mythicemporium/service" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in server" />
-        <item itemvalue="JUnit.ProductVariationRepositoryTest" />
-        <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.ProductControllerTest" />
-        <item itemvalue="JUnit.ProductControllerTest.createProductAsUserShouldReturn403" />
+        <item itemvalue="JUnit.service in server" />
+        <item itemvalue="JUnit.controller in server" />
+        <item itemvalue="JUnit.CategoryControllerTest" />
+        <item itemvalue="JUnit.BrandControllerTest (1)" />
+        <item itemvalue="JUnit.BrandControllerTest" />
       </list>
     </recent_temporary>
   </component>

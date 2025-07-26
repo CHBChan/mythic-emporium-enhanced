@@ -7,7 +7,7 @@ import com.mythicemporium.dto.ProductVariationRequestDTO;
 import com.mythicemporium.model.Brand;
 import com.mythicemporium.model.Category;
 import com.mythicemporium.model.Product;
-import com.mythicemporium.service.ProductResult;
+import com.mythicemporium.service.Result;
 import com.mythicemporium.service.ProductService;
 import com.mythicemporium.service.ResultType;
 import org.junit.jupiter.api.Test;
@@ -411,12 +411,12 @@ class ProductControllerTest {
                 """;
     }
 
-    private ProductResult generateGoodResult() {
-        return new ProductResult();
+    private Result generateGoodResult() {
+        return new Result();
     }
 
-    private ProductResult generateBadResult() {
-        ProductResult result = new ProductResult();
+    private Result generateBadResult() {
+        Result result = new Result();
         result.addErrorMessage("Bad result.", ResultType.INVALID);
         return result;
     }

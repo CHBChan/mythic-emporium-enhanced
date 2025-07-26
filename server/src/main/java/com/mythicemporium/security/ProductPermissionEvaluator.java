@@ -1,9 +1,6 @@
 package com.mythicemporium.security;
 
-import com.mythicemporium.dto.PriceUpdateDTO;
-import com.mythicemporium.dto.ProductRequestDTO;
-import com.mythicemporium.dto.ProductVariationRequestDTO;
-import com.mythicemporium.dto.StockUpdateDTO;
+import com.mythicemporium.dto.*;
 import com.mythicemporium.model.Product;
 import com.mythicemporium.model.ProductVariation;
 import com.mythicemporium.service.ProductService;
@@ -42,6 +39,14 @@ public class ProductPermissionEvaluator implements PermissionEvaluator {
             return checkProductVariationPermission(action);
         }
 
+        if(targetDomainObject instanceof BrandRequestDTO b) {
+            return checkBrandPermission(action);
+        }
+
+        if(targetDomainObject instanceof CategoryRequestDTO c) {
+            return checkCategoryPermission(action);
+        }
+
         return false;
     }
 
@@ -61,6 +66,14 @@ public class ProductPermissionEvaluator implements PermissionEvaluator {
             return checkProductVariationPermission(action);
         }
 
+        if("Brand".equalsIgnoreCase(targetType)) {
+            return checkBrandPermission(action);
+        }
+
+        if("Category".equalsIgnoreCase(targetType)) {
+            return checkCategoryPermission(action);
+        }
+
         return false;
     }
 
@@ -78,6 +91,32 @@ public class ProductPermissionEvaluator implements PermissionEvaluator {
     }
 
     private boolean checkProductVariationPermission(String action) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null || !auth.isAuthenticated()) return false;
+
+        boolean isAdmin = auth.getAuthorities().stream()
+                .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+
+        return switch(action) {
+            case "create", "update", "delete" -> isAdmin;
+            default -> false;
+        };
+    }
+
+    private boolean checkBrandPermission(String action) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null || !auth.isAuthenticated()) return false;
+
+        boolean isAdmin = auth.getAuthorities().stream()
+                .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
+
+        return switch(action) {
+            case "create", "update", "delete" -> isAdmin;
+            default -> false;
+        };
+    }
+
+    private boolean checkCategoryPermission(String action) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth == null || !auth.isAuthenticated()) return false;
 
