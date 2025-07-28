@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96215bcf-52d6-4c07-99d3-b7081bd48ab0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/config/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +140,24 @@
       <recent name="com.mythicemporium.config" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.service in server">
+  <component name="RunManager" selected="JUnit.controller in server">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
+        <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.mythicemporium.App" />
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mythicemporium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <envs>
         <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
@@ -162,20 +178,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.mythicemporium.controller" />
       <option name="MAIN_CLASS_NAME" value="com.mythicemporium.controller.BrandControllerTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <envs>
-        <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
-        <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
-      </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BrandControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BrandControllerTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <envs>
@@ -249,11 +251,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.service in server" />
         <item itemvalue="JUnit.controller in server" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.service in server" />
         <item itemvalue="JUnit.CategoryControllerTest" />
         <item itemvalue="JUnit.BrandControllerTest (1)" />
-        <item itemvalue="JUnit.BrandControllerTest" />
       </list>
     </recent_temporary>
   </component>
