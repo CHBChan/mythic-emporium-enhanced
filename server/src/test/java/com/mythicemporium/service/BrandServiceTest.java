@@ -154,7 +154,7 @@ public class BrandServiceTest {
 
     @Test
     void shouldDeleteValidBrand() {
-        when(brandRepository.deleteByIdAndReturnCount(any(Long.class))).thenReturn(1);
+        when(brandRepository.findById(any(Long.class))).thenReturn(Optional.of(generateBrand(1L)));
 
         assertTrue(service.deleteBrand(1L));
     }
@@ -166,7 +166,7 @@ public class BrandServiceTest {
 
     @Test
     void shouldNotDeleteBrandWithNonexistentId() {
-        when(brandRepository.deleteByIdAndReturnCount(any(Long.class))).thenReturn(0);
+        when(brandRepository.findById(any(Long.class))).thenReturn(Optional.empty());
 
         assertThrows(ResourceNotFoundException.class, () -> service.deleteBrand(1L));
     }

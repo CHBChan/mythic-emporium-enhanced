@@ -300,7 +300,7 @@ class ProductServiceTest {
 
     @Test
     void shouldDeleteValidProduct() {
-        when(productRepository.deleteByIdAndReturnCount(any(Long.class))).thenReturn(1);
+        when(productRepository.findById(any(Long.class))).thenReturn(Optional.of(generateProduct(1L)));
 
         assertTrue(service.deleteProduct(1L));
     }
@@ -577,7 +577,7 @@ class ProductServiceTest {
 
     @Test
     void shouldDeleteValidVariation() {
-        when(productVariationRepository.deleteByIdAndReturnCount(any(Long.class))).thenReturn(1);
+        when(productVariationRepository.findById(any(Long.class))).thenReturn(Optional.of(generateProductVariation(1L)));
 
         assertTrue(service.deleteVariation(1L));
     }
@@ -589,7 +589,7 @@ class ProductServiceTest {
 
     @Test
     void shouldNotDeleteNonExistentVariation() {
-        when(productVariationRepository.deleteByIdAndReturnCount(any(Long.class))).thenReturn(0);
+        when(productVariationRepository.findById(any(Long.class))).thenReturn(Optional.empty());
 
         assertThrows(ResourceNotFoundException.class, () -> service.deleteVariation(1L));
     }
@@ -603,6 +603,17 @@ class ProductServiceTest {
         product.setCategory(createTestCategory());
         product.setVariations(new ArrayList<>());
         return product;
+    }
+
+    private ProductVariation generateProductVariation(Long id) {
+        ProductVariation pv = new ProductVariation();
+        pv.setId(id);
+        pv.setProduct(null);
+        pv.setSku("Test SKU");
+        pv.setPrice(1.99);
+        pv.setImageUrl(null);
+        pv.setAttributes(List.of());
+        return pv;
     }
 
     private ProductRequestDTO generateProductRequest() {

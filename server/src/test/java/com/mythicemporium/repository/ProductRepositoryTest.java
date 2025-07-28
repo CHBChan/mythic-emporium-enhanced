@@ -84,22 +84,4 @@ class ProductRepositoryTest extends BaseRepositoryTest {
         assertEquals(2, testCategoryProducts.size());
         assertEquals(1, testCategory2Products.size());
     }
-
-    @Test
-    void shouldDeleteByIdAndReturnCount() {
-        Product product = createTestProduct("Test Product", "Test Description", testBrand, testCategory);
-
-        Product saved = productRepository.save(product);
-        Optional<Product> found = productRepository.findById(saved.getId());
-
-        assertNotNull(saved.getId());
-        assertTrue(found.isPresent());
-
-        int removeCount = productRepository.deleteByIdAndReturnCount(saved.getId());
-        entityManager.clear();
-        Optional<Product> foundRemoved = productRepository.findById(saved.getId());
-
-        assertEquals(1, removeCount);
-        assertTrue(foundRemoved.isEmpty());
-    }
 }

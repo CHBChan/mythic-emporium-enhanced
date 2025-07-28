@@ -5,6 +5,8 @@ import com.mythicemporium.exception.InsufficientStockException;
 import com.mythicemporium.exception.InvalidRequestException;
 import com.mythicemporium.exception.ResourceConflictException;
 import com.mythicemporium.exception.ResourceNotFoundException;
+import com.mythicemporium.logging.AuditContext;
+import com.mythicemporium.logging.AuditContextHolder;
 import com.mythicemporium.model.*;
 import com.mythicemporium.repository.BrandRepository;
 import com.mythicemporium.repository.CategoryRepository;
@@ -100,6 +102,10 @@ public class ProductService {
 
         try {
             product = productRepository.save(product);
+
+            AuditContext ctx = AuditContextHolder.getContext();
+            ctx.setOperationType("CREATE");
+
             result.setData(toResponseDTO(product));
         }
         catch(Exception ex) {
@@ -127,9 +133,13 @@ public class ProductService {
         product.setBrand(brand);
         product.setCategory(category);
 
+        AuditContext ctx = AuditContextHolder.getContext();
+        ctx.setOperationType("UPDATE");
+
         Result result = new Result();
         Product savedProduct = productRepository.save(product);
         result.setData(toResponseDTO(savedProduct));
+
         return CompletableFuture.completedFuture(result);
     }
 
@@ -138,9 +148,14 @@ public class ProductService {
             throw new InvalidRequestException("Product id cannot be negative.");
         }
 
-        if(productRepository.deleteByIdAndReturnCount(productId) == 0) {
-            throw new ResourceNotFoundException("Product " + productId + " not found.");
-        }
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new ResourceNotFoundException("Product id " + productId + " not found."));
+
+        AuditContext ctx = AuditContextHolder.getContext();
+        ctx.setOperationType("DELETE");
+
+        productRepository.delete(product);
+
         return true;
     }
 
@@ -174,6 +189,9 @@ public class ProductService {
         variation.setAttributes(attributes);
         productVariationRepository.save(variation);
         product.getVariations().add(variation);
+
+        AuditContext ctx = AuditContextHolder.getContext();
+        ctx.setOperationType("CREATE");
 
         Result result = new Result();
         result.setData(toResponseDTO(product));
@@ -218,6 +236,9 @@ public class ProductService {
         variation.getAttributes().addAll(attributes);
 
         productVariationRepository.save(variation);
+
+        AuditContext ctx = AuditContextHolder.getContext();
+        ctx.setOperationType("UPDATE");
 
         Result result = new Result();
         result.setData(toResponseDTO(product));
@@ -282,9 +303,14 @@ public class ProductService {
             throw new InvalidRequestException("Variation id cannot be negative.");
         }
 
-        if(productVariationRepository.deleteByIdAndReturnCount(variationId) == 0) {
-            throw new ResourceNotFoundException("Variation " + variationId + " not found.");
-        }
+        ProductVariation pv = productVariationRepository.findById(variationId)
+                .orElseThrow(() -> new ResourceNotFoundException("Variation id " + variationId + " not found."));
+
+        AuditContext ctx = AuditContextHolder.getContext();
+        ctx.setOperationType("DELETE");
+
+        productVariationRepository.delete(pv);
+
         return true;
     }
 

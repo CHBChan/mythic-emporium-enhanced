@@ -36,22 +36,4 @@ public class CategoryRepositoryTest extends BaseRepositoryTest {
         assertEquals(1, categorys.size());
         assertEquals("Test Category", categorys.get(0).getName());
     }
-
-    @Test
-    void shouldDeleteByIdAndReturnCount() {
-        Category category = createTestCategory("Test Category");
-
-        Category saved = categoryRepository.save(category);
-        Optional<Category> found = categoryRepository.findById(saved.getId());
-
-        assertNotNull(saved.getId());
-        assertTrue(found.isPresent());
-
-        int removeCount = categoryRepository.deleteByIdAndReturnCount(saved.getId());
-        entityManager.clear();
-        Optional<Category> foundRemoved = categoryRepository.findById(saved.getId());
-
-        assertEquals(1, removeCount);
-        assertTrue(foundRemoved.isEmpty());
-    }
 }

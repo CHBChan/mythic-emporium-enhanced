@@ -11,8 +11,4 @@ import java.util.List;
 public interface BrandRepository extends JpaRepository<Brand, Long> {
 
     List<Brand> findByName(String name);
-
-    @Modifying
-    @Query("DELETE FROM Brand b WHERE b.id = :id")
-    int deleteByIdAndReturnCount(@Param("id") Long id);
 }

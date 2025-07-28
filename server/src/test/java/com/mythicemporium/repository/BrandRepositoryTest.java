@@ -36,22 +36,4 @@ public class BrandRepositoryTest extends BaseRepositoryTest {
         assertEquals(1, brands.size());
         assertEquals("Test Brand", brands.get(0).getName());
     }
-
-    @Test
-    void shouldDeleteByIdAndReturnCount() {
-        Brand brand = createTestBrand("Test Brand");
-
-        Brand saved = brandRepository.save(brand);
-        Optional<Brand> found = brandRepository.findById(saved.getId());
-
-        assertNotNull(saved.getId());
-        assertTrue(found.isPresent());
-
-        int removeCount = brandRepository.deleteByIdAndReturnCount(saved.getId());
-        entityManager.clear();
-        Optional<Brand> foundRemoved = brandRepository.findById(saved.getId());
-
-        assertEquals(1, removeCount);
-        assertTrue(foundRemoved.isEmpty());
-    }
 }

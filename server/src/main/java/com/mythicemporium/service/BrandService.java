@@ -5,6 +5,8 @@ import com.mythicemporium.dto.CategoryRequestDTO;
 import com.mythicemporium.exception.InvalidRequestException;
 import com.mythicemporium.exception.ResourceConflictException;
 import com.mythicemporium.exception.ResourceNotFoundException;
+import com.mythicemporium.logging.AuditContext;
+import com.mythicemporium.logging.AuditContextHolder;
 import com.mythicemporium.model.Brand;
 import com.mythicemporium.repository.BrandRepository;
 import org.springframework.stereotype.Service;
@@ -54,6 +56,10 @@ public class BrandService {
 
         try {
             brand = brandRepository.save(brand);
+
+            AuditContext ctx = AuditContextHolder.getContext();
+            ctx.setOperationType("CREATE");
+
             result.setData(brand);
         }
         catch(Exception ex) {
@@ -68,9 +74,8 @@ public class BrandService {
             throw new InvalidRequestException("Brand id cannot be negative.");
         }
 
-        if(brandRepository.findById(brandId).isEmpty()) {
-            throw new ResourceNotFoundException("Brand id " + brandId + " does not exist.");
-        }
+        Brand brand = brandRepository.findById(brandId)
+                .orElseThrow(() -> new ResourceNotFoundException("Brand id " + brandId + " does not exist."));
 
         if(brandRequestDTO.getName() == null || brandRequestDTO.getName().isBlank()) {
             throw new InvalidRequestException("Brand name cannot be null or empty.");
@@ -80,24 +85,33 @@ public class BrandService {
             throw new ResourceConflictException("Brand name already exists.");
         }
 
-        Brand brand = new Brand();
-        brand.setId(brandId);
+        AuditContext ctx = AuditContextHolder.getContext();
+        ctx.setOperationType("UPDATE");
+
         brand.setName(brandRequestDTO.getName());
 
+        Brand savedBrand = brandRepository.save(brand);
+
         Result result = new Result();
-        result.setData(brand);
+        result.setData(savedBrand);
 
         return CompletableFuture.completedFuture(result);
     }
 
+    @Transactional
     public boolean deleteBrand(Long brandId) {
-        if(brandId < 0) {
+        if (brandId < 0) {
             throw new InvalidRequestException("Brand id cannot be negative.");
         }
 
-        if(brandRepository.deleteByIdAndReturnCount(brandId) == 0) {
-            throw new ResourceNotFoundException("Brand " + brandId + " not found.");
-        }
+        Brand brand = brandRepository.findById(brandId)
+                .orElseThrow(() -> new ResourceNotFoundException("Brand id " + brandId + " not found."));
+
+        AuditContext ctx = AuditContextHolder.getContext();
+        ctx.setOperationType("DELETE");
+
+        brandRepository.delete(brand);
+
         return true;
     }
 }

@@ -12,8 +12,4 @@ import java.util.List;
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
     List<Category> findByName(String name);
-
-    @Modifying
-    @Query("DELETE FROM Category c WHERE c.id = :id")
-    int deleteByIdAndReturnCount(@Param("id") Long id);
 }

@@ -154,7 +154,7 @@ public class CategoryServiceTest {
 
     @Test
     void shouldDeleteValidCategory() {
-        when(categoryRepository.deleteByIdAndReturnCount(any(Long.class))).thenReturn(1);
+        when(categoryRepository.findById(any(Long.class))).thenReturn(Optional.of(generateCategory(1L)));
 
         assertTrue(service.deleteCategory(1L));
     }
@@ -166,7 +166,7 @@ public class CategoryServiceTest {
 
     @Test
     void shouldNotDeleteCategoryWithNonexistentId() {
-        when(categoryRepository.deleteByIdAndReturnCount(any(Long.class))).thenReturn(0);
+        when(categoryRepository.findById(any(Long.class))).thenReturn(Optional.empty());
 
         assertThrows(ResourceNotFoundException.class, () -> service.deleteCategory(1L));
     }

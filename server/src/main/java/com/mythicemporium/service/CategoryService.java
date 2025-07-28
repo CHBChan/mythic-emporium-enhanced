@@ -4,6 +4,8 @@ import com.mythicemporium.dto.CategoryRequestDTO;
 import com.mythicemporium.exception.InvalidRequestException;
 import com.mythicemporium.exception.ResourceConflictException;
 import com.mythicemporium.exception.ResourceNotFoundException;
+import com.mythicemporium.logging.AuditContext;
+import com.mythicemporium.logging.AuditContextHolder;
 import com.mythicemporium.model.Category;
 import com.mythicemporium.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
@@ -53,6 +55,10 @@ public class CategoryService {
 
         try {
             category = categoryRepository.save(category);
+
+            AuditContext ctx = AuditContextHolder.getContext();
+            ctx.setOperationType("CREATE");
+
             result.setData(category);
         }
         catch(Exception ex) {
@@ -67,9 +73,8 @@ public class CategoryService {
             throw new InvalidRequestException("Category id cannot be negative.");
         }
 
-        if(categoryRepository.findById(categoryId).isEmpty()) {
-            throw new ResourceNotFoundException("Category id " + categoryId + " does not exist.");
-        }
+        Category category = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new ResourceNotFoundException("Category id " + categoryId + " does not exist."));
 
         if(categoryRequestDTO.getName() == null || categoryRequestDTO.getName().isBlank()) {
             throw new InvalidRequestException("Category name cannot be null or empty.");
@@ -79,12 +84,15 @@ public class CategoryService {
             throw new ResourceConflictException("Category name already exists.");
         }
 
-        Category category = new Category();
-        category.setId(categoryId);
+        AuditContext ctx = AuditContextHolder.getContext();
+        ctx.setOperationType("UPDATE");
+
         category.setName(categoryRequestDTO.getName());
 
+        Category savedCategory = categoryRepository.save(category);
+
         Result result = new Result();
-        result.setData(category);
+        result.setData(savedCategory);
 
         return CompletableFuture.completedFuture(result);
     }
@@ -94,9 +102,14 @@ public class CategoryService {
             throw new InvalidRequestException("Category id cannot be negative.");
         }
 
-        if(categoryRepository.deleteByIdAndReturnCount(categoryId) == 0) {
-            throw new ResourceNotFoundException("Category " + categoryId + " not found.");
-        }
+        Category category = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new ResourceNotFoundException("Category id " + categoryId + " not found."));
+
+        AuditContext ctx = AuditContextHolder.getContext();
+        ctx.setOperationType("DELETE");
+
+        categoryRepository.delete(category);
+
         return true;
     }
 }

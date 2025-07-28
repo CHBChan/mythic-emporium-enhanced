@@ -90,19 +90,4 @@ class ProductVariationRepositoryTest extends BaseRepositoryTest {
         assertTrue(updated.isPresent());
         assertEquals(2.22, updated.get().getPrice());
     }
-
-    @Test
-    void shouldDeleteByIdAndReturnCount() {
-        ProductVariation variation = createTestVariation("Test SKU", 1.99, 4, "img");
-        variation.setProduct(testProduct);
-
-        ProductVariation saved = productVariationRepository.save(variation);
-        int removedCount = productVariationRepository.deleteByIdAndReturnCount(saved.getId());
-        entityManager.clear();
-        Optional<ProductVariation> removed = productVariationRepository.findById(saved.getId());
-
-        assertEquals(1, removedCount);
-        assertNotNull(saved.getId());
-        assertTrue(removed.isEmpty());
-    }
 }

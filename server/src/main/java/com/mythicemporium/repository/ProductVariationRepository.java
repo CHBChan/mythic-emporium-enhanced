@@ -19,8 +19,4 @@ public interface ProductVariationRepository extends JpaRepository<ProductVariati
     @Modifying
     @Query("UPDATE ProductVariation p SET p.price = :price WHERE p.id = :id")
     int updatePriceById(@Param("id") Long id, @Param("price") Double price);
-
-    @Modifying
-    @Query("DELETE FROM ProductVariation p WHERE p.id = :id")
-    int deleteByIdAndReturnCount(@Param("id") Long id);
 }
