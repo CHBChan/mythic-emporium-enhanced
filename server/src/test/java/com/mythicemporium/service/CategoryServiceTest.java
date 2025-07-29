@@ -106,6 +106,7 @@ public class CategoryServiceTest {
     void shouldUpdateValidCategory() throws ExecutionException, InterruptedException {
         when(categoryRepository.findById(any(Long.class))).thenReturn(Optional.of(generateCategory(1L)));
         when(categoryRepository.findByName(any(String.class))).thenReturn(List.of());
+        when(categoryRepository.save(any(Category.class))).thenReturn(generateCategory(1L));
 
         CategoryRequestDTO dto = generateCategoryRequest();
 

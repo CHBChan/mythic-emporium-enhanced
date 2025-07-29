@@ -5,35 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96215bcf-52d6-4c07-99d3-b7081bd48ab0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/config/JpaAuditConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/logging/AuditContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/logging/AuditContextHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/logging/AuditInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/logging/AuditRevisionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/logging/AuditRevisionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/model/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/model/Brand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/model/ProductVariation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/model/ProductVariation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/model/ProductVariationAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/model/ProductVariationAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/BrandRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/BrandRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/ProductVariationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/repository/ProductVariationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/BrandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mythicemporium/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mythicemporium/repository/BrandRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/repository/BrandRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mythicemporium/repository/CategoryRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/repository/CategoryRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mythicemporium/repository/ProductRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/repository/ProductRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mythicemporium/repository/ProductVariationRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/repository/ProductVariationRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/mythicemporium/service/BrandServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/service/BrandServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/mythicemporium/service/CategoryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/service/CategoryServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mythicemporium/service/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mythicemporium/service/ProductServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +37,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.App.executor": "Run",
+    "JUnit.All in enver.executor": "Run",
     "JUnit.All in server.executor": "Run",
     "JUnit.BrandControllerTest (1).executor": "Run",
     "JUnit.BrandControllerTest.executor": "Run",
@@ -78,6 +53,7 @@
     "JUnit.CategoryControllerTest.executor": "Run",
     "JUnit.CategoryRepositoryTest.executor": "Run",
     "JUnit.CategoryServiceTest.executor": "Run",
+    "JUnit.CategoryServiceTest.shouldUpdateValidCategory.executor": "Run",
     "JUnit.ProductControllerTest.CreateInvalidProductShouldReturn403.executor": "Run",
     "JUnit.ProductControllerTest.createProductAsUserShouldReturn401.executor": "Run",
     "JUnit.ProductControllerTest.createProductAsUserShouldReturn403.executor": "Run",
@@ -170,30 +146,33 @@
       <recent name="com.mythicemporium.config" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
-        <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
-      </envs>
-      <option name="MAIN_CLASS_NAME" value="com.mythicemporium.App" />
-      <module name="enver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mythicemporium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ProductVariationRepositoryTest">
     <configuration default="true" type="Application" factoryName="Application">
       <envs>
         <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
         <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
       </envs>
       <module name="enver" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrandRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="enver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mythicemporium.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mythicemporium.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.mythicemporium.repository.BrandRepositoryTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <envs>
+        <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
+        <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -238,26 +217,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="enver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mythicemporium.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.mythicemporium.service" />
-      <option name="MAIN_CLASS_NAME" value="com.mythicemporium.service.ProductServiceTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <envs>
-        <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
-        <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
-      </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProductVariationRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="enver" />
       <extension name="coverage">
@@ -291,13 +250,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.mythicemporium.repository in enver" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="enver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mythicemporium.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mythicemporium.repository" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <envs>
+        <env name="SUPABASE_DB_USERNAME" value="postgres.rrdvrytweygbgjiyarry" />
+        <env name="SUPABASE_DB_PASSWORD" value="D53UeXQTOJnVqA9r" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.ProductServiceTest" />
         <item itemvalue="JUnit.ProductVariationRepositoryTest" />
         <item itemvalue="JUnit.ProductRepositoryTest" />
         <item itemvalue="JUnit.CategoryRepositoryTest" />
+        <item itemvalue="JUnit.BrandRepositoryTest" />
+        <item itemvalue="JUnit.com.mythicemporium.repository in enver" />
       </list>
     </recent_temporary>
   </component>

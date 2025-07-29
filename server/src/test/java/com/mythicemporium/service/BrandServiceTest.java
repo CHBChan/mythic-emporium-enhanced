@@ -106,6 +106,7 @@ public class BrandServiceTest {
     void shouldUpdateValidBrand() throws ExecutionException, InterruptedException {
         when(brandRepository.findById(any(Long.class))).thenReturn(Optional.of(generateBrand(1L)));
         when(brandRepository.findByName(any(String.class))).thenReturn(List.of());
+        when(brandRepository.save(any(Brand.class))).thenReturn(generateBrand(1L));
 
         BrandRequestDTO dto = generateBrandRequest();
 
